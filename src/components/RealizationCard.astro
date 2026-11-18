@@ -1,0 +1,23 @@
+---
+import type { Realization } from "../data/site";
+
+interface Props {
+  realization: Realization;
+}
+
+const { realization } = Astro.props;
+---
+<figure class="group overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm">
+  <img
+    src={realization.image}
+    alt={realization.title}
+    loading="lazy"
+    width="800"
+    height="600"
+    class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+  />
+  <figcaption class="p-5">
+    <p class="text-xs font-semibold uppercase tracking-wide text-brand-600">{realization.category}</p>
+    <p class="mt-1 font-semibold text-ink">{realization.title}</p>
+  </figcaption>
+</figure>

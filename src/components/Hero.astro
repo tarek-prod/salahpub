@@ -1,0 +1,38 @@
+---
+import { site } from "../data/site";
+
+const phoneHref = site.identity.phone.replace(/[^\d+]/g, "");
+---
+<section class="relative isolate overflow-hidden bg-brand-900 text-white">
+  <div aria-hidden="true" class="absolute -right-32 -top-40 h-[28rem] w-[28rem] rounded-full border-[4rem] border-white/5"></div>
+  <div aria-hidden="true" class="absolute -bottom-48 right-1/4 h-96 w-96 rounded-full bg-brand-700/40 blur-3xl"></div>
+  <div class="relative mx-auto max-w-6xl px-4 py-20 md:py-28">
+    <p class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-brand-100">
+      {site.identity.slogan}
+    </p>
+    <h1 class="mt-7 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+      Votre image mérite <span class="text-brand-300">de se démarquer.</span>
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg leading-relaxed text-white/75">
+      Enseignes, lettres lumineuses, impression et signalétique : nous donnons de l'éclat à votre communication visuelle.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="/contact"
+        class="rounded-full bg-brand-400 px-6 py-3 font-semibold text-white transition hover:bg-brand-300"
+      >
+        Demander un devis
+      </a>
+      <a
+        href="/realizations"
+        class="rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+      >
+        Découvrir nos réalisations
+      </a>
+    </div>
+    <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/70">
+      <a href={`tel:${phoneHref}`} class="hover:text-white">{site.identity.phone}</a>
+      <span>{site.identity.address}</span>
+    </div>
+  </div>
+</section>
