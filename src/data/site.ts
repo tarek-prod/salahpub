@@ -140,8 +140,7 @@ export const site = {
     facebook: "https://facebook.com/salahpub",
     instagram: "https://instagram.com/salahpub",
   },
-  // TODO: remplacer par l'ID du formulaire SalahPub sur Formspree.
-  formspreeId: "your-form-id",
+  formspreeId: "xkjrzewo",
   article: {
     title: "Comment une bonne enseigne booste votre visibilité locale",
     excerpt:

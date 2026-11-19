@@ -35,7 +35,7 @@ describe("generated site", () => {
   });
 
   it("contact page posts to Formspree", () => {
-    expect(readPage("contact")).toContain("formspree.io/f/your-form-id");
+    expect(readPage("contact")).toContain("formspree.io/f/xkjrzewo");
   });
 
   it("ships the favicon and realization placeholders", () => {
