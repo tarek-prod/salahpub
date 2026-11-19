@@ -1,5 +1,6 @@
 ---
 import type { Realization } from "../data/site";
+import { withBase } from "../utils/urls";
 
 interface Props {
   realization: Realization;
@@ -9,7 +10,7 @@ const { realization } = Astro.props;
 ---
 <figure class="group overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm">
   <img
-    src={realization.image}
+    src={withBase(realization.image)}
     alt={realization.title}
     loading="lazy"
     width="800"

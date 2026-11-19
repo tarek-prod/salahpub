@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import { site } from "../data/site";
+import { withBase } from "../utils/urls";
 ---
 <BaseLayout
   title="Nos services"
@@ -21,7 +22,7 @@ import { site } from "../data/site";
       <p class="mt-2 max-w-2xl leading-relaxed text-ink/70">
         Chaque projet est différent. Contactez-nous pour échanger sur vos besoins et obtenir une proposition adaptée.
       </p>
-      <a href="/contact" class="mt-5 inline-flex rounded-full bg-brand-600 px-5 py-3 font-semibold text-white hover:bg-brand-700">
+      <a href={withBase("/contact/")} class="mt-5 inline-flex rounded-full bg-brand-600 px-5 py-3 font-semibold text-white hover:bg-brand-700">
         Demander un devis
       </a>
     </div>

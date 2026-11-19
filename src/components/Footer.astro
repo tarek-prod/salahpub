@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import { withBase } from "../utils/urls";
 
 const phoneHref = site.identity.phone.replace(/[^\d+]/g, "");
 ---
@@ -8,7 +9,7 @@ const phoneHref = site.identity.phone.replace(/[^\d+]/g, "");
     <div>
       <p class="text-xl font-extrabold">Salah<span class="text-brand-300">Pub</span></p>
       <p class="mt-2 text-sm text-white/65">{site.identity.slogan}</p>
-      <a href="/article" class="mt-5 inline-flex text-sm font-semibold text-brand-200 hover:text-white">
+      <a href={withBase("/article/")} class="mt-5 inline-flex text-sm font-semibold text-brand-200 hover:text-white">
         Nos conseils <span aria-hidden="true" class="ml-1">→</span>
       </a>
     </div>

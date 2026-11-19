@@ -1,5 +1,6 @@
 ---
 import type { Service } from "../data/site";
+import { withBase } from "../utils/urls";
 
 interface Props {
   service: Service;
@@ -8,7 +9,7 @@ interface Props {
 const { service } = Astro.props;
 ---
 <a
-  href="/services"
+  href={withBase("/services/")}
   class="group block rounded-2xl border border-brand-100 bg-white p-6 transition hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg"
 >
   <span
