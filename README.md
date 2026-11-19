@@ -25,4 +25,15 @@ npm run test:build
 
 ## Déploiement
 
-`npm run build` génère le site statique dans `dist/`. Uploader ce dossier sur l'hébergeur (GitHub Pages, Netlify, Vercel ou FTP).
+### GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` construit et publie le site automatiquement à chaque mise à jour de `main`.
+
+1. Dans le dépôt GitHub, ouvrir **Settings → Pages**.
+2. Sous **Build and deployment**, choisir **GitHub Actions** comme source.
+3. Fusionner les changements dans `main` et vérifier l'exécution du workflow dans l'onglet **Actions**.
+4. Le site sera disponible à `https://tarek-prod.github.io/salahpub/`.
+
+### Autres hébergeurs
+
+`npm run build` génère le site statique dans `dist/`. Uploader ce dossier sur Netlify, Vercel ou un hébergeur FTP.

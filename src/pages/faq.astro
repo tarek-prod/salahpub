@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import { site } from "../data/site";
+import { withBase } from "../utils/urls";
 ---
 <BaseLayout
   title="FAQ"
@@ -23,7 +24,7 @@ import { site } from "../data/site";
         </details>
       ))}
     </div>
-    <a href="/contact" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-500">
+    <a href={withBase("/contact/")} class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-500">
       Une autre question ? Contactez-nous <span aria-hidden="true" class="ml-1">→</span>
     </a>
   </section>

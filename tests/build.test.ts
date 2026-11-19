@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const dist = join(process.cwd(), "dist");
+const baseUrl = process.env.GITHUB_ACTIONS === "true" ? "/salahpub/" : "/";
 const pages = ["index", "services", "realizations", "about", "faq", "contact", "article"];
 
 const outputPath = (page: string) =>
@@ -24,6 +25,12 @@ describe("generated site", () => {
     expect(html).toContain("SalahPub");
     expect(html).toContain("Votre image, notre métier");
     expect(html).toContain("Enseignes &amp; signalétique");
+  });
+
+  it("uses the correct base path for internal links and images", () => {
+    const html = readPage("index");
+    expect(html).toContain(`href="${baseUrl}contact/`);
+    expect(html).toContain(`src="${baseUrl}images/realization-1.svg"`);
   });
 
   it("every page has French language metadata and a title", () => {
