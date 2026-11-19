@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+<BaseLayout title={site.article.title} description={site.article.excerpt}>
+  <article class="mx-auto max-w-3xl px-4 py-16 md:py-20">
+    <p class="text-sm font-semibold uppercase tracking-wide text-brand-600">Conseils</p>
+    <h1 class="mt-3 text-3xl font-extrabold leading-tight text-brand-900 md:text-4xl">
+      {site.article.title}
+    </h1>
+    <img
+      src={site.article.image}
+      alt=""
+      width="800"
+      height="600"
+      class="mt-8 aspect-[4/3] w-full rounded-2xl object-cover"
+    />
+    <p class="mt-7 text-lg leading-relaxed text-ink/80">{site.article.excerpt}</p>
+    <p class="mt-5 leading-relaxed text-ink/75">{site.article.body}</p>
+    <a
+      href="/contact"
+      class="mt-8 inline-flex rounded-full bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700"
+    >
+      Parler de mon projet
+    </a>
+  </article>
+</BaseLayout>

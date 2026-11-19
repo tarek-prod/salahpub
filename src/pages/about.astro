@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import { site } from "../data/site";
+---
+<BaseLayout
+  title="Qui sommes-nous ?"
+  description="SalahPub, votre agence publicitaire de proximité : conception, fabrication et pose."
+>
+  <section class="mx-auto max-w-4xl px-4 py-16 md:py-20">
+    <SectionTitle title="Qui sommes-nous ?" subtitle="Une équipe au service de votre image." />
+    <div class="space-y-5 leading-relaxed text-ink/75">
+      <p>
+        {site.identity.name} est une agence publicitaire spécialisée dans la signalétique et la communication visuelle.
+        Nous accompagnons les commerces, entreprises et collectivités, de la conception à la pose.
+      </p>
+      <p>
+        Du conseil à l'installation, chaque étape est pensée pour proposer une solution adaptée à votre activité,
+        à votre identité et à votre espace.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-2xl bg-brand-50 p-6">
+        <p class="text-3xl font-extrabold text-brand-700">A à Z</p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/70">Un accompagnement à chaque étape</p>
+      </div>
+      <div class="rounded-2xl bg-brand-50 p-6">
+        <p class="text-3xl font-extrabold text-brand-700">Sur mesure</p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/70">Des solutions pensées pour votre activité</p>
+      </div>
+      <div class="rounded-2xl bg-brand-50 p-6">
+        <p class="text-3xl font-extrabold text-brand-700">SAV</p>
+        <p class="mt-2 text-sm leading-relaxed text-ink/70">Un suivi après la réalisation</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

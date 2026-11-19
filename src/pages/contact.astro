@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import { site } from "../data/site";
+
+const phoneHref = site.identity.phone.replace(/[^\d+]/g, "");
+---
+<BaseLayout
+  title="Contact"
+  description="Contactez SalahPub pour votre projet d'enseigne, de signalétique ou de communication visuelle."
+>
+  <section class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:py-20 lg:grid-cols-[0.8fr_1.2fr]">
+    <div>
+      <SectionTitle
+        title="Parlons de votre projet"
+        subtitle="Décrivez-nous votre besoin. Nous vous répondrons pour échanger sur la suite."
+      />
+      <ul class="space-y-4 text-ink/75">
+        <li class="flex gap-3">
+          <span aria-hidden="true" class="text-brand-600">T</span>
+          <a href={`tel:${phoneHref}`} class="hover:text-brand-700">{site.identity.phone}</a>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true" class="text-brand-600">@</span>
+          <a href={`mailto:${site.identity.email}`} class="break-all hover:text-brand-700">{site.identity.email}</a>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true" class="text-brand-600">+</span>
+          <span>{site.identity.address}</span>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true" class="text-brand-600">◷</span>
+          <span>{site.identity.hours}</span>
+        </li>
+      </ul>
+      <p class="mt-8 rounded-xl bg-brand-50 p-4 text-sm leading-relaxed text-ink/70">
+        Les informations saisies dans ce formulaire servent uniquement à traiter votre demande.
+      </p>
+    </div>
+    <ContactForm />
+  </section>
+</BaseLayout>

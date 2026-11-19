@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RealizationCard from "../components/RealizationCard.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import { site } from "../data/site";
+---
+<BaseLayout
+  title="Nos réalisations"
+  description="Galerie des réalisations de SalahPub : enseignes, lettres lumineuses, covering et décoration."
+>
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <SectionTitle
+      title="Nos réalisations"
+      subtitle="Un aperçu de projets de signalétique et de communication visuelle."
+    />
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {site.realizations.map((realization) => <RealizationCard realization={realization} />)}
+    </div>
+  </section>
+</BaseLayout>

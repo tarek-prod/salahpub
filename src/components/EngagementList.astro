@@ -1,0 +1,16 @@
+---
+import { site } from "../data/site";
+---
+<ul class="grid gap-4 sm:grid-cols-2">
+  {site.engagements.map((engagement) => (
+    <li class="flex items-center gap-3 text-ink/80">
+      <span
+        aria-hidden="true"
+        class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white"
+      >
+        ✓
+      </span>
+      {engagement}
+    </li>
+  ))}
+</ul>

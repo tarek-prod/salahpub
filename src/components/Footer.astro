@@ -1,0 +1,33 @@
+---
+import { site } from "../data/site";
+
+const phoneHref = site.identity.phone.replace(/[^\d+]/g, "");
+---
+<footer class="bg-ink text-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <p class="text-xl font-extrabold">Salah<span class="text-brand-300">Pub</span></p>
+      <p class="mt-2 text-sm text-white/65">{site.identity.slogan}</p>
+      <a href="/article" class="mt-5 inline-flex text-sm font-semibold text-brand-200 hover:text-white">
+        Nos conseils <span aria-hidden="true" class="ml-1">→</span>
+      </a>
+    </div>
+    <div class="space-y-2 text-sm text-white/75">
+      <h2 class="font-semibold text-white">Nous contacter</h2>
+      <p>{site.identity.address}</p>
+      <p><a href={`tel:${phoneHref}`} class="hover:text-white">{site.identity.phone}</a></p>
+      <p><a href={`mailto:${site.identity.email}`} class="hover:text-white">{site.identity.email}</a></p>
+      <p class="pt-1 text-white/55">{site.identity.hours}</p>
+    </div>
+    <div class="text-sm">
+      <h2 class="font-semibold">Suivez-nous</h2>
+      <div class="mt-3 flex gap-4 text-white/75">
+        <a href={site.social.facebook} target="_blank" rel="noreferrer" class="hover:text-white">Facebook</a>
+        <a href={site.social.instagram} target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 px-4 py-4 text-center text-xs text-white/50">
+    © {new Date().getFullYear()} SalahPub — Tous droits réservés.
+  </div>
+</footer>
